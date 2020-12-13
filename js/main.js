@@ -40,11 +40,17 @@ keys.addEventListener('click', e => {
     
       if (type === 'equal') {
         // Perform a calculation
-        const firstNumber = calculator.dataset.firstNumber;
+        const firstNumber = parseInt(calculator.dataset.firstNumber);
         const operator = calculator.dataset.operator;
-        const secondNumber = displayValue;
-        // display.textContent = calculate(firstNumber, operator, secondNumber);
-        console.log(firstNumber, operator, secondNumber);
+        const secondNumber = parseInt(displayValue);
+
+        let result = '';
+        if(operator === 'plus') result = firstNumber + secondNumber;
+        if(operator === 'minus') result = firstNumber - secondNumber;
+        if(operator === 'times') result = firstNumber * secondNumber;
+        if(operator === 'divide') result = firstNumber / secondNumber;
+
+        display.textContent = result;
       }
     
       calculator.dataset.previousKeyType = type;
