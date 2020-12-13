@@ -136,3 +136,7 @@
   [data-type="number"]:active {
     background: var(--grey-200);
   }
+
+  .calculator [data-state="selected"] {
+    background: var(--grey-200);
+  }
